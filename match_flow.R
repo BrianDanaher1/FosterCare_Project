@@ -7,7 +7,7 @@
 
 name <- "Placement Setting"
 name1 <- paste(c(1, name), collapse = "")
-name2 <- paste(c(2, name), collapse = "")
+name2 <- paste(c(2, name), collapse = "") 
 name3 <- paste(c(3, name), collapse = "")
 name4 <- paste(c(4, name), collapse = "")
 name5 <- paste(c(5, name), collapse = "")
