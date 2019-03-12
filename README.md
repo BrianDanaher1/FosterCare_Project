@@ -1,9 +1,10 @@
 # FosterCare_Project
-R programs for analyzing ~250,000 records of foster care placement, preparing for machine learning, extrapolating values, deep analysis
+R programs for analyzing ~250,000 records of foster care placement, preparing for machine learning, extrapolating values, deeper analysis (ranking & weighing different case types, etc), and combining data into single dataframes (ex. "all_numbers") in order to best suit analysis procedures.
 
+# Visualization
 Excerpt from research: </br>
-" </br>
-I built this multi-layered pie chart that includes the placement settings of the child after the three top first settings
+
+"I built this multi-layered pie chart that includes the placement settings of the child after the three top first settings
 (from pie chart): Foster Home - Relative, Foster Home - NonRelative, and Institution.</br></br>
 
 The outer rings of the pie show the percentage of children that went to the indicated placement setting, after this first setting. To be clear, this only visualizes the first and second placements. The R programs that we built can track any number of cases, but after three or four the amount of data starts to dwindle significantly, so tracking beyond that point has so far been fairly unfruitful.  </br></br>
