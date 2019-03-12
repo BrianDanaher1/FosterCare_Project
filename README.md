@@ -1,7 +1,9 @@
 # FosterCare_Project
 R programs for analyzing ~250,000 records of foster care placement: preparing for machine learning, extrapolating values, deeper analysis (ranking & weighing different case types, etc), and combining data into single dataframes (ex. "all_numbers") in order to best suit analysis procedures.
 
-# Visualization
+# Placement Tracking
+How children's placements over time as they move through the foster care system effect if they end up exiting the system, staying in the system, or moving to better (or worse) placements.  </br>
+
 Excerpt from research: </br>
 
 "I built this multi-layered pie chart that includes the placement settings of the child after the three top first settings
@@ -20,3 +22,7 @@ Having “No Case” is a significant insight because it means that when the pro
 
 
 ![Pie](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Pie.PNG)
+
+
+# Geographic Heat Mapping
+![HeatMap](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/HeatMap_COMPARE.png)
