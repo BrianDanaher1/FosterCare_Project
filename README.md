@@ -1,9 +1,9 @@
 # FosterCare_Project
 R programs for analyzing ~250,000 records of foster care placement: preparing for machine learning, extrapolating values, deeper analysis (feature engineering: ranking & weighing different case types, etc), and combining data into single dataframes (ex. "all_numbers") in order to best suit analysis procedures. </br>
 
-Reproducible design, most programs build a dataframe that is used by other programs for deeper insights. </br>
+# Data Pipeline & Feature Engineering
+Reproducible design, most programs build a dataframe that is used by other programs for deeper insights. Feature engineering became a pivotal piece of the project before machine learning could be done, so these programs then lead into the construction of a dataframe with numerical characteristics.  </br>
 
-Analysis pipeline:
  1) isolate_removals_1to5.R        
  --> outputs each number case as dataframe (ex. "second_removals")
  
@@ -57,13 +57,13 @@ Having “No Case” is a significant insight because it means that when the pro
 "
 
 
-![Pie](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Pie.PNG)
+![Pie](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Pie.PNG) </br>
 
 
 # Geographic Heat Mapping
-![HeatMap](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/HeatMap_COMPARE.png)
+![HeatMap](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/HeatMap_COMPARE.png) </br>
 
 # Factor Analysis
 Most important factors in determining success of child's cases in foster care system (higher success = higher likelyhood of being provided for properly and exiting system).  This was discovered via a random forest model in R, and plotted in ggplot2.
 
-![Influences](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Influences_GGPLOT.PNG)
+![Influences](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Influences_GGPLOT.PNG) </br>
