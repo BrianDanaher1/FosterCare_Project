@@ -34,7 +34,7 @@ Reproducible design, most programs build a dataframe that is used by other progr
  
 10) WEIGHT_MOVEMENTS.R             
 --> final feature engineering scheme, "weights" entirety of case history, not just last place </br>
---> "all_numbers" dataframe for machine learning completes
+--> "all_numbers" dataframe complete and ready for machine learning
 
 
 # Placement Tracking
