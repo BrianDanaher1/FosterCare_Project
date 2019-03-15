@@ -1,7 +1,41 @@
 # FosterCare_Project
 R programs for analyzing ~250,000 records of foster care placement: preparing for machine learning, extrapolating values, deeper analysis (feature engineering: ranking & weighing different case types, etc), and combining data into single dataframes (ex. "all_numbers") in order to best suit analysis procedures. </br>
 
-Reproducible design, most programs build a dataframe that is used by other programs for deeper insights.
+Reproducible design, most programs build a dataframe that is used by other programs for deeper insights. </br>
+
+Analysis pipeline:
+ 1) isolate_removals_1to5.R        
+ --> outputs each number case as dataframe (ex. "second_removals")
+ 
+ 2) Sets.R                         
+ --> creates percentages for movements within removal dataframes ^^ </br>
+ --> these percentages do not consider the case BEFORE the current one
+ 
+ 3) merge_FIRST_THROUGH_FIFTH.R    
+ --> outputs wide file "paths" with 1-5 placements
+ 
+ 4) match_flow.R                   
+ --> uses "paths" to track specific placement type through case history </br>
+ --> outputs "child_flow_custom"
+ 
+ 5) find_percent_OF_FIRST_CASES.R  
+ 6) find_percent_SECOND_outcome.R
+ 7) find_percent_THIRD_outcome.R </br>
+ --> 5-7 use child_flow_custom to calculate % of A to B movements (user chooses A & B)  </br>
+ --> these percentages WILL consider the case BEFORE the current one (as specified by user)
+ 
+ 8) build_rank_system.R  </br>
+ --> isolates last case of each child and pulls information </br>
+ --> feature engineering, builds ranking system using last placement in case
+ 
+ 9) all_numbers_merge_data.R       
+ --> feature engineering, extrapolates & calculates columns of features for machine learning </br>
+ --> examples: case duration (in days), number of participants, average caregiver age, pop density
+ 
+10) WEIGHT_MOVEMENTS.R             
+--> final feature engineering scheme, "weights" entirety of case history, not just last place </br>
+--> "all_numbers" dataframe for machine learning completes
+
 
 # Placement Tracking
 How children's placements over time as they move through the foster care system effect if they end up exiting the system, staying in the system, or moving to better (or worse) placements.  </br>
