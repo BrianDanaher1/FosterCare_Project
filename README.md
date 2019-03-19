@@ -1,5 +1,5 @@
 # FosterCare_Project
-R programs for analyzing ~250,000 records of foster care placement: preparing for machine learning, extrapolating values, deeper analysis (feature engineering: ranking & weighing different case types, etc), and combining data into single dataframes (ex. "all_numbers") in order to best suit analysis procedures. </br>
+R programs for analyzing ~250,000 records of foster care placement: preparing for machine learning, extrapolating values, deeper analysis (feature engineering: ranking & weighing different case types, etc), and combining data into single dataframes (ex. "all_numbers") in order to best suit analysis procedures. Some adapted codes for models also in this repository - remember to set proper columns / characteristics.  </br>
 
 # Data Pipeline & Feature Engineering
 Reproducible design, most programs build a dataframe that is used by other programs for deeper insights. Feature engineering became a pivotal piece of the project before machine learning could be done, so these programs then lead into the construction of a dataframe with numerical characteristics.  </br>
@@ -68,6 +68,7 @@ Having “No Case” is a significant insight because it means that when the pro
 
 
 # Geographic Heat Mapping
+The goal of heat mapping the data (there were ~900 unique zip codes present) was to see if any areas particularly stuck out as having a high number of cases per capita.  Many did, however, the reasons for this are still being investigated.</br>
 ![HeatMap](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/HeatMap_COMPARE.png) </br>
 
 # Factor Analysis
@@ -75,10 +76,12 @@ Most important factors in determining success of child's cases in foster care sy
 
 ![Influences](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Influences_Inc_CrimeData.png) </br>
 
-# Decision Tree
+This plot here also incorporates the use of the crime data, which was created by another team member.  It included financial and crime statistics for about 60 of the most populated zip codes in the data set.
 
+# Decision Tree
+I used a number of different decision trees in an attempt to gain more insight out of the data.  However, most of the results were self-explanatory.
 ![DecTree](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/dectree_WEIGHT_RANK.png) </br>
 
 # Neural Network
-
+The neural network was used to assess the capability of machine learning models to accurately predict the "success" of a case (the "Weight" feature that we engineered earlier).  This model below also includes the crime data.
 ![NeuralNet](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Neural_with_Crime.PNG) </br>
