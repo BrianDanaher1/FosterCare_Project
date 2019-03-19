@@ -36,9 +36,12 @@ Reproducible design, most programs build a dataframe that is used by other progr
 --> final feature engineering scheme, "weights" entirety of case history, not just last place </br>
 --> "all_numbers" dataframe complete and ready for machine learning
 
-11) Random_Forest_Builder.R </br>
---> adapted from public code, uses "all_numbers" to build RF model </br>
---> uses GGPLOT to visualize case success influences
+11) Neural_Network_Builder.R </br>
+12) Random_Forest_Builder.R </br>
+13) Decision_Tree_Builder.R </br>
+--> 11-13 are models </br>
+--> adapted from public code, use "all_numbers" to build model </br>
+--> RF also uses GGPLOT to visualize case success influences </br>
 
 
 # Placement Tracking
