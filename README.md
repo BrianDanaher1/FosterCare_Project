@@ -66,4 +66,4 @@ Having “No Case” is a significant insight because it means that when the pro
 # Factor Analysis
 Most important factors in determining success of child's cases in foster care system (higher success = higher likelyhood of being provided for properly and exiting system).  This was discovered via a random forest model in R, and plotted in ggplot2.
 
-![Influences](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Influences_GGPLOT.PNG) </br>
+![Influences](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Influences_Inc_CrimeData.png) </br>
