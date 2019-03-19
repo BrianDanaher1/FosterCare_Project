@@ -81,4 +81,4 @@ Most important factors in determining success of child's cases in foster care sy
 
 # Neural Network
 
-![NeuralNet] (https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Neural_with_Crime.PNG) </br>
+![NeuralNet](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Neural_with_Crime.PNG) </br>
