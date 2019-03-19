@@ -75,7 +75,7 @@ Most important factors in determining success of child's cases in foster care sy
 This plot here also incorporates the use of the crime data, which was created by another team member.  It included financial and crime statistics for about 60 of the most populated zip codes in the data set.
 
 # Decision Tree
-I used a number of different decision trees in an attempt to gain more insight out of the data.  However, most of the results were self-explanatory.
+I used a number of different decision trees in an attempt to gain more insight out of the data.  However, most of the results were self-explanatory.  For example, below, we can see that a lower Rank usually results in a higher Weight.  This makes sense because Rank was based off of the success of a child's final case.  A lower Rank means a less successful case result, so the child would most likely have a higher Weight for their entire case as well.
 
 ![DecTree](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/dectree_WEIGHT_RANK.png) </br>
 
