@@ -185,7 +185,7 @@ all_numbers <- filter(all_numbers, all_numbers$NumCaregivers != 0)
 all_numbers <- filter(all_numbers, !is.na(all_numbers$CareAge))
 
 
-# Merge in Maegan's dataset with crime information
+# Merge in dataset with crime information
 # ===============================================
 
 all_numbers <- mutate(all_numbers, "Per-Capita-Income" = 1)
@@ -219,12 +219,10 @@ for (zipcode in all_numbers$`Zip`){
 }
 
 all_numbers <- filter(all_numbers, !is.na(all_numbers$"Per-Capita Income"))
-
-
-
-
-
 all_numbers <- filter(all_numbers, !is.na(all_numbers$CaseDuration))
+
+# Clean up R Studio
 remove(uniqueIDs, zips, zipcode, spot, i, ID, caseID, number_of_participants, one_case, place, zip, caregivers, number_of_caregivers)
 
+# Write to file
 write.csv(all_numbers, "all_numbers.csv")
