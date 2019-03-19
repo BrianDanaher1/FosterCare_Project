@@ -67,10 +67,6 @@ Having “No Case” is a significant insight because it means that when the pro
 ![Pie](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Pie.PNG) </br>
 
 
-# Geographic Heat Mapping
-The goal of heat mapping the data (there were ~900 unique zip codes present) was to see if any areas particularly stuck out as having a high number of cases per capita.  Many did, however, the reasons for this are still being investigated.</br>
-![HeatMap](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/HeatMap_COMPARE.png) </br>
-
 # Factor Analysis
 Most important factors in determining success of child's cases in foster care system (higher success = higher likelyhood of being provided for properly and exiting system).  This was discovered via a random forest model in R, and plotted in ggplot2.
 
@@ -80,8 +76,15 @@ This plot here also incorporates the use of the crime data, which was created by
 
 # Decision Tree
 I used a number of different decision trees in an attempt to gain more insight out of the data.  However, most of the results were self-explanatory.
+
 ![DecTree](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/dectree_WEIGHT_RANK.png) </br>
 
 # Neural Network
 The neural network was used to assess the capability of machine learning models to accurately predict the "success" of a case (the "Weight" feature that we engineered earlier).  This model below also includes the crime data.
+
 ![NeuralNet](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Neural_with_Crime.PNG) </br>
+
+# Geographic Heat Mapping
+The goal of heat mapping the data (there were ~900 unique zip codes present) was to see if any areas particularly stuck out as having a high number of cases per capita.  Many did, however, the reasons for this are still being investigated.</br>
+
+![HeatMap](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/HeatMap_COMPARE.png) </br>
