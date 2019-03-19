@@ -1,38 +1,53 @@
-# Add in more data to the all_numbers data frame
-# Fill up columns with this data
+# This program creates the dataframe "all_numbers"
+# which can be used for machine learning.  It is designed
+# to have as much information as possible, WITHOUT ANY NA'S
+# in order to make the machine learning programs as 
+# accurate as possible.
+
+# Data is pulled from these dfs:
+#       ALL_PARTICIPANTS (2010-2017 merged together, LONG)
+#       case_rem_place
+#       cases
+#       crime
+#
+# Columns of all_numbers are filled with the appropriate data
+# per each case, zip code, or other factor that aligns with info
 
 library(dplyr)
 cases_relevant <- filter(cases, cases$`InternalCaseID` %in% case_rem_place$`InternalCaseID`)
+
+# ===================================================================================
 
 # Put caseID into all_numbers
 i <- 1
 for (ID in all_numbers$`Identification ID`){
   
   spot <- which(case_rem_place$`Identification ID` == ID)
-  
   all_numbers[i,1] <- case_rem_place[spot[1], 1]
   
   i = i+1
   
 }
 
+# ===================================================================================
+
 # Put zip code into all_numbers (some do not have zips)
 i <- 1
 for (caseID in all_numbers$`InternalCaseID`){
   
   spot <- which(cases_relevant$`InternalCaseID` == caseID)
-  
   all_numbers[i,4] <- as.double(cases_relevant[spot[1], 5])
   
   i = i+1
   
 }
 
-# Remove data without zip code, because this is important for future columns
+# Remove data without zip code
 all_numbers <- filter(all_numbers, !is.na(all_numbers$Zip))
 
+# ===================================================================================
 
-# Is zip code in top 7 area or out?
+# Is zip code in top 7 highest cases/popdens area or out?
 # 1 = in, 0 = out
 i <- 1
 zips <- c(32331, 32359, 32060, 32680, 32626, 32348, 32055)
@@ -54,6 +69,7 @@ for (zipcode in all_numbers$`Zip`){
   
 }
 
+# ===================================================================================
 
 # Find number of participants per child's case
 i <- 1
@@ -76,8 +92,9 @@ for (ID in uniqueIDs) {
   
 }
 
-# Add Zip Count (number of cases in Zip) to all_numbers
+# ===================================================================================
 
+# Add Zip Count (number of cases in Zip) to all_numbers
 i <- 1
 for (zip in all_numbers$Zip) {
   
@@ -90,9 +107,9 @@ for (zip in all_numbers$Zip) {
 # Convert these character strings into doubles before moving on
 all_numbers$ZipCount <- as.double(all_numbers$ZipCount)
 
+# ===================================================================================
 
 # Add Zip Density (Zip Count / Pop Density of Zip) to all_numbers
-
 i <- 1
 for (zip in all_numbers$Zip) {
   
@@ -105,8 +122,9 @@ for (zip in all_numbers$Zip) {
 }
 
 all_numbers$ZipDens <- as.double(all_numbers$ZipDens)
-
 all_numbers <- filter(all_numbers, !is.na(all_numbers$ZipDens))
+
+# ===================================================================================
 
 # Case Duration
 i <- 1
@@ -122,33 +140,40 @@ for (caseID in all_numbers$`InternalCaseID`){
 
 all_numbers <- filter(all_numbers, !is.na(all_numbers$CaseDuration))
 
+# ===================================================================================
+
 # Age of child
 copy <- filter(ALL_PARTICIPANTS, ALL_PARTICIPANTS$MonthOfBirth != "/")
 copy$Year <- gsub("^", "01/01/", copy$Year)
 copy$Year <- as.Date.character(copy$Year, format="%d/%m/%Y")
 
+# Change format of birthdates to MM/DD/YYYY instead of MM/YYY
 copy$MonthOfBirth <- gsub("/", "/01/", copy$MonthOfBirth)
 copy$MonthOfBirth <- as.Date.character(copy$MonthOfBirth, format="%d/%m/%Y")
 
+# Subtract case date and birth date to find age of child during case
 i <- 1
 for (ID in all_numbers$`Identification ID`){
   
   spot <- which(copy$`Identification ID` == ID)
-  
   all_numbers[i,12] <- (copy[spot[1], 36] - copy[spot[1], 6])
   
   i = i+1
   
 }
 
+# Divide by 365 to convert age in days to age in years
 all_numbers$Age <- all_numbers$Age / 365
 
+# ===================================================================================
 
 # Number of caregivers in case and the average age of them
+# Start by making columns, fill with 1's before overwriting
+
 all_numbers <- mutate(all_numbers, "NumCaregivers" = 1)
 all_numbers <- mutate(all_numbers, "CareAge" = 1)
-i <- 1
 
+i <- 1
 uniqueIDs <- unique(all_numbers$`Identification ID`)
 
 for (ID in uniqueIDs) {
@@ -181,12 +206,14 @@ for (ID in uniqueIDs) {
   
 }
 
+# Remove any records that have no caregivers on record
+# This means that number of caregivers = 0 and age of caregivers = 0 or INF (div 0)
 all_numbers <- filter(all_numbers, all_numbers$NumCaregivers != 0)
 all_numbers <- filter(all_numbers, !is.na(all_numbers$CareAge))
 
 
 # Merge in dataset with crime information
-# ===============================================
+# ===================================================================================
 
 all_numbers <- mutate(all_numbers, "Per-Capita-Income" = 1)
 all_numbers <- mutate(all_numbers, "Median-Household-Income"  = 1)
@@ -218,8 +245,13 @@ for (zipcode in all_numbers$`Zip`){
   
 }
 
+# ===================================================================================
+
+# Remove records that did not have per capita income OR case start/end dates (end-start would be 0)
 all_numbers <- filter(all_numbers, !is.na(all_numbers$"Per-Capita Income"))
 all_numbers <- filter(all_numbers, !is.na(all_numbers$CaseDuration))
+
+# ===================================================================================
 
 # Clean up R Studio
 remove(uniqueIDs, zips, zipcode, spot, i, ID, caseID, number_of_participants, one_case, place, zip, caregivers, number_of_caregivers)
