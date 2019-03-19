@@ -38,7 +38,7 @@ Reproducible design, most programs build a dataframe that is used by other progr
 
 11) Random_Forest_Builder.R </br>
 --> adapted from public code, uses "all_numbers" to build RF model </br>
---> uses GGPLOT for case success influences
+--> uses GGPLOT to visualize case success influences
 
 
 # Placement Tracking
