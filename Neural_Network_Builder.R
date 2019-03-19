@@ -44,7 +44,7 @@ testNN = scaled[-index , ]
 # Fit neural network
 # Choose characteristics
 set.seed(2)
-NN = neuralnet(formula <- Weight ~ InternalCaseID + IdentificationID + Zip + 
+NN = neuralnet(formula <- Weight ~ Zip + 
                  ProbZip + NumParticipants + ZipCount + ZipDens + CaseDuration + 
                  Age + NumCaregivers + CareAge + PerCapIncome + MedHousIncome + 
                  VC + PC + AvgHome + InfantMortRate + PercUnder18 + LowBirthWeight + 
