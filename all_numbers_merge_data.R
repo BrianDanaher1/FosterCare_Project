@@ -109,19 +109,20 @@ all_numbers$ZipCount <- as.double(all_numbers$ZipCount)
 
 # ===================================================================================
 
-# Add Zip Density (Zip Count / Pop Density of Zip) to all_numbers
+# Add Zip Density (Pop Density of Zip) to all_numbers
 i <- 1
-for (zip in all_numbers$Zip) {
-  
+for (zip in all_numbers$Zip) 
+  {
   spot <- which(PopDensity$`Zip/ZCTA` == zip)
-  
-  all_numbers[i,10] <- (all_numbers[i,9] / PopDensity[spot[1], 4])
+  all_numbers[i,10] <- (PopDensity[spot[1], 4])
   
   i = i+1
-  
-}
+  }
 
+# ZipDens is a number --> make it a double
 all_numbers$ZipDens <- as.double(all_numbers$ZipDens)
+
+# Remove data that does not have ZipDens (missing Zip or density in calculation)
 all_numbers <- filter(all_numbers, !is.na(all_numbers$ZipDens))
 
 # ===================================================================================
