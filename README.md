@@ -62,7 +62,7 @@ Having “No Case” is a significant insight because it means that when the pro
 </br>
 
 
-![Pie](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Pie.PNG) </br>
+![Pie](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Pie_FINAL.PNG) </br>
 
 
 # Factor Analysis
