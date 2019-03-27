@@ -1,7 +1,7 @@
 # FosterCare_Project
 R programs for analyzing ~250,000 records of foster care placement: preparing for machine learning, extrapolating values, deeper analysis (feature engineering: ranking & weighing different case types, etc), and combining data into single dataframes (ex. "all_numbers") in order to best suit analysis procedures. Some adapted codes for models also in this repository - remember to set proper columns / characteristics.  </br>
 
-# Data Pipeline & Feature Engineering
+# Data Manipulation, Feature Engineering, Machine Learning
 Reproducible design, most programs build a dataframe that is used by other programs for deeper insights. Feature engineering became a pivotal piece of the project before machine learning could be done, so these programs then lead into the construction of a dataframe with numerical characteristics.  </br>
 
  1) isolate_removals_1to5.R        
@@ -47,9 +47,7 @@ Reproducible design, most programs build a dataframe that is used by other progr
 # Placement Tracking
 How children's placements over time as they move through the foster care system effect if they end up exiting the system, staying in the system, or moving to better (or worse) placements.  </br>
 
-Excerpt from research: </br>
-
-"I built this multi-layered pie chart that includes the placement settings of the child after the three top first settings
+I built this multi-layered pie chart that includes the placement settings of the child after the three top first settings
 (from pie chart): Foster Home - Relative, Foster Home - NonRelative, and Institution.</br></br>
 
 The outer rings of the pie show the percentage of children that went to the indicated placement setting, after this first setting. To be clear, this only visualizes the first and second placements. The R programs that we built can track any number of cases, but after three or four the amount of data starts to dwindle significantly, so tracking beyond that point has so far been fairly unfruitful.  </br></br>
@@ -61,7 +59,6 @@ Having “No Case” is a significant insight because it means that when the pro
 ● After Institution - lowest chance (9%) of leaving system</br>
 ● Highest chance of going to Pre-Adoptive Home after Foster-Relative (12%)</br>
 </br>
-"
 
 
 ![Pie](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Pie.PNG) </br>
