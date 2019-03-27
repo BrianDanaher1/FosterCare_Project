@@ -66,19 +66,39 @@ Having “No Case” is a significant insight because it means that when the pro
 
 
 # Factor Analysis
-Most important factors in determining success of child's cases in foster care system (higher success = higher likelyhood of being provided for properly and exiting system).  This was discovered via a random forest model in R, and plotted in ggplot2.
+After building the feature engineering R program to calculate the "weight" of each case, the next step was to determine the most influential factors of the success of child's cases in foster care system (higher success = higher likelyhood of being provided for properly and exiting system).  Our success factor was used as the characteristic to be predicted, based off of various other details about the child's case, their caregivers, location, etc.  The result was discovered via a random forest model in R, and plotted in ggplot2.
+
+Influencing factors: </br>
+1) Case Duration: actual duration of case, in days, from case begin date to case end date </br>
+2) Age: age of child during associated case (estimated with MM/YYYY) </br>
+3) CareAge: age of caregiver (estimated with MM/YYYY) </br>
+4) NumParticipants: number of people involved in case (parents, caregivers, other children, relatives, etc) </br>
+5) PerCapIncome: income per capita of associated case zip code </br>
+6) MedHousIncome: median household income
+7) NumCaregivers: number of caregivers in case
+8) VC: violent crime rate
+9) ZipDens: density of zip code per square mile
+10) ZipCount: number of other cases in same zip code as case
+11) AvgHome: average cost of a house in area
+12) PC: property crime rate
+13) Zip: zip code where case took place
+14) PercUnder18: percent of population in zip under 18
+15) LowBirthWeight: rate of low birth weights in zip
+16) InfantMortRate: rate of infant mortality in zip
+17) JuvDelinquency: rate of junvinile delinquency in zip
+18) ProbZip: a factor we created to track the most densely packed zip codes in terms of cases
 
 ![Influences](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Influences_Inc_CrimeData.png) </br>
 
-This plot here also incorporates the use of the crime data, which was created by another team member.  It included financial and crime statistics for about 60 of the most populated zip codes in the data set.
+This plot here also incorporates the use of the crime/financial data, which was created by another team member.  It included financial and crime statistics for about 60 of the most populated zip codes in the data set.  Turns out that this was fairly important in the first 5 influences. </br>
 
 # Decision Tree
-I used a number of different decision trees in an attempt to gain more insight out of the data.  However, most of the results were self-explanatory.  For example, below, we can see that a lower Rank usually results in a higher Weight.  This makes sense because Rank was based off of the success of a child's final case.  A lower Rank means a less successful case result, so the child would most likely have a higher Weight for their entire case as well.
+I used a number of different decision trees in an attempt to gain more insight out of the data.  However, most of the results were self-explanatory.  For example, below, we can see that a lower Rank usually results in a higher Weight.  This makes sense because Rank was based off of the success of a child's final case.  A lower Rank means a less successful case result, so the child would most likely have a higher Weight for their entire case as well. 
 
 ![DecTree](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/dectree_WEIGHT_RANK.png) </br>
 
 # Neural Network
-The neural network was used to assess the capability of machine learning models to accurately predict the "success" of a case (the "Weight" feature that we engineered earlier).  This model below also includes the crime data.
+The neural network was used to assess the capability of machine learning models to accurately predict the "success" of a case (the "Weight" feature that we engineered earlier).  This model below also includes the crime data; it was actually created solely to test if there was enough data in our statistical analysis / machine learning dataframe "all_numbers", to determine if more data was needed to make a more accurate prediction.  To our surprise, this was extremely accurate, so I did not need to source out any additional details beyond what I had.
 
 ![NeuralNet](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Neural_with_Crime.PNG) </br>
 
