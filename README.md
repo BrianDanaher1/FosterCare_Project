@@ -2,7 +2,7 @@
 R programs for analyzing ~250,000 records of foster care placement: preparing for machine learning, extrapolating values, deeper analysis (feature engineering: ranking & weighing different case types, etc), and combining data into single dataframes (ex. "all_numbers") in order to best suit analysis procedures. Some adapted codes for models also in this repository - remember to set proper columns / characteristics.  </br>
 
 # Data Manipulation & Feature Engineering
-Reproducible design, most programs build a dataframe that is used by other programs for deeper insights. Feature engineering became a pivotal piece of the project before machine learning could be done, so these programs then lead into the construction of a dataframe with numerical characteristics.  </br>
+Reproducible design; most programs build a dataframe that is used by other programs for deeper insights. Feature engineering became a pivotal piece of the project before machine learning could be done, so these programs then lead into the construction of a dataframe with numerical characteristics.  This final dataframe, "all_numbers", was used for machine learning and statistical analysis.  </br>
 
  1) isolate_removals_1to5.R        
  --> outputs each number case as dataframe (ex. "second_removals")
@@ -46,10 +46,10 @@ Reproducible design, most programs build a dataframe that is used by other progr
 
 
 # Placement Tracking
-How children's placements over time as they move through the foster care system effect if they end up exiting the system, staying in the system, or moving to better (or worse) placements.  </br>
+How children's placements over time as they move through the foster care system effect if they end up exiting the system, staying in the system, or moving to better (or worse) placements.</br>
 
 I built this multi-layered pie chart that includes the placement settings of the child after the three top first settings
-(from pie chart): Foster Home - Relative, Foster Home - NonRelative, and Institution.</br></br>
+(from pie chart): Foster Home - Relative, Foster Home - NonRelative, and Institution.</br>
 
 The outer rings of the pie show the percentage of children that went to the indicated placement setting, after this first setting. To be clear, this only visualizes the first and second placements. The R programs that we built can track any number of cases, but after three or four the amount of data starts to dwindle significantly, so tracking beyond that point has so far been fairly unfruitful.  </br></br>
 
@@ -61,6 +61,7 @@ Having “No Case” is a significant insight because it means that when the pro
 ● Highest chance of going to Pre-Adoptive Home after Foster-Relative (12%)</br>
 </br>
 
+Foster care with a relative is a clear influence on a child's retention decreasing.  In addition to the insights that can be extrapolated from this visualization, I also discovered that 98% of the children who move into the Pre-Adoption placement setting (which is ONLY a significant movement after foster with a relative), do not return for any further cases.  This is more proof that foster care with a relative is superior than with a non-relative. </br>
 
 ![Pie](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Pie_FINAL.PNG) </br>
 
@@ -86,7 +87,7 @@ Influencing factors: </br>
 15) LowBirthWeight: rate of low birth weights in zip
 16) InfantMortRate: rate of infant mortality in zip
 17) JuvDelinquency: rate of junvinile delinquency in zip
-18) ProbZip: a factor we created to track the most densely packed zip codes in terms of cases
+18) ProbZip: a factor created to track the most densely packed zip codes in terms of cases </br>
 
 ![Influences](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Influences_Inc_CrimeData.png) </br>
 
@@ -98,7 +99,7 @@ I used a number of different decision trees in an attempt to gain more insight o
 ![DecTree](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/dectree_WEIGHT_RANK.png) </br>
 
 # Neural Network
-The neural network was used to assess the capability of machine learning models to accurately predict the "success" of a case (the "Weight" feature that we engineered earlier).  This model below also includes the crime data; it was actually created solely to test if there was enough data in our statistical analysis / machine learning dataframe "all_numbers", to determine if more data was needed to make a more accurate prediction.  To our surprise, this was extremely accurate, so I did not need to source out any additional details beyond what I had.
+The neural network was used to assess the capability of machine learning models to accurately predict the "success" of a case (the "Weight" feature that we engineered earlier).  This model below also includes the crime data; it was actually created solely to test if there was enough data in our statistical analysis / machine learning dataframe "all_numbers", to determine if more data was needed to make a more accurate prediction.  To our surprise, this was extremely accurate, so I did not need to source out any additional details beyond what I had. </br>
 
 ![NeuralNet](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Neural_with_Crime.PNG) </br>
 
