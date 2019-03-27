@@ -1,7 +1,7 @@
 # FosterCare_Project
 R programs for analyzing ~250,000 records of foster care placement: preparing for machine learning, extrapolating values, deeper analysis (feature engineering: ranking & weighing different case types, etc), and combining data into single dataframes (ex. "all_numbers") in order to best suit analysis procedures. Some adapted codes for models also in this repository - remember to set proper columns / characteristics.  </br>
 
-# Data Manipulation, Feature Engineering, Machine Learning
+# Data Manipulation & Feature Engineering
 Reproducible design, most programs build a dataframe that is used by other programs for deeper insights. Feature engineering became a pivotal piece of the project before machine learning could be done, so these programs then lead into the construction of a dataframe with numerical characteristics.  </br>
 
  1) isolate_removals_1to5.R        
@@ -34,8 +34,9 @@ Reproducible design, most programs build a dataframe that is used by other progr
  
 10) WEIGHT_MOVEMENTS.R             
 --> final feature engineering scheme, "weights" entirety of case history, not just last place </br>
---> "all_numbers" dataframe complete and ready for machine learning
+--> "all_numbers" dataframe complete and ready for machine learning </br>
 
+# Machine Learning
 11) Neural_Network_Builder.R </br>
 12) Random_Forest_Builder.R </br>
 13) Decision_Tree_Builder.R </br>
