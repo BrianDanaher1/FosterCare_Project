@@ -35,11 +35,11 @@ for (ID in uniqueIDs) {
   RemovalTrack[i, 5] <- as.character(end_reason_oflastplace_infirstrem)
   
   # What was the placement upon re-entry into system?
-  placement_on_reentry <- one_child[(numplacements_first_rem + numplacements_second_rem), 8]
+  placement_on_reentry <- one_child[(numplacements_first_rem + 1), 8]
   RemovalTrack[i, 6] <- placement_on_reentry
   
   # What was the service upon re-entry into system?
-  service_on_reentry <- one_child[(numplacements_first_rem + numplacements_second_rem), 6]
+  service_on_reentry <- one_child[(numplacements_first_rem + 1), 6]
   RemovalTrack[i, 7] <- service_on_reentry
   
   # What was the end reason upon discharge after re-entry?
