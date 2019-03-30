@@ -44,6 +44,11 @@ Reproducible design; most programs build a dataframe that is used by other progr
 --> adapted from public code, use "all_numbers" to build model </br>
 --> RF also uses GGPLOT to visualize case success influences </br>
 
+# Analysis in Progress
+14) reason_for_rem.R </br>
+--> creates data frame with details about why child was removed and then re-entered </br>
+--> has place, service, end reasons for removal AND RE-ENTRY TO SYSTEM information </br>
+
 
 # Placement Tracking
 How children's placements over time as they move through the foster care system effect if they end up exiting the system, staying in the system, or moving to better (or worse) placements.</br>
