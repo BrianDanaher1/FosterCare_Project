@@ -1,5 +1,5 @@
 # Isolate last placement end reason (last placement in FIRST removal)
-# Removal reason for next removal
+# Removal reason for next removal (after RE-ENTRY into system)
 
 library(dplyr)
 uniqueIDs <- unique(case_rem_place$`Identification ID`)
@@ -7,6 +7,7 @@ uniqueIDs <- unique(case_rem_place$`Identification ID`)
 # Set up dataframe
 RemovalTrack <- data.frame(InternalCaseID=as.double(), IdentificationID=as.double(), NumRemovals=as.double(),
                            LastPlace_Discharge=as.character(), EndReason_Discharge=as.character(),
+                           Days_before_Reentry=as.double(),
                            Place_on_Reentry=as.character(), Service_on_Reentry=as.character(),
                            EndReason_afterReentry=as.character(), stringsAsFactors = FALSE)
 
@@ -34,17 +35,21 @@ for (ID in uniqueIDs) {
   end_reason_oflastplace_infirstrem <- one_child[numplacements_first_rem, 10]
   RemovalTrack[i, 5] <- as.character(end_reason_oflastplace_infirstrem)
   
+  # How long before re-entry?
+  days_before_reentered <- remdates[2] - remdates[1]
+  RemovalTrack[i, 6] = days_before_reentered
+  
   # What was the placement upon re-entry into system?
   placement_on_reentry <- one_child[(numplacements_first_rem + 1), 8]
-  RemovalTrack[i, 6] <- placement_on_reentry
+  RemovalTrack[i, 7] <- placement_on_reentry
   
   # What was the service upon re-entry into system?
   service_on_reentry <- one_child[(numplacements_first_rem + 1), 6]
-  RemovalTrack[i, 7] <- service_on_reentry
+  RemovalTrack[i, 8] <- service_on_reentry
   
   # What was the end reason upon discharge after re-entry?
   end_reason_after_reentry <- one_child[(numplacements_first_rem + numplacements_second_rem), 10]
-  RemovalTrack[i, 8] <- end_reason_after_reentry
+  RemovalTrack[i, 9] <- end_reason_after_reentry
   
   i <- i+1
   
@@ -52,6 +57,9 @@ for (ID in uniqueIDs) {
 
 # Child must have been removed out of their first placement situation to "re-enter"
 RemovalTrack <- filter(RemovalTrack, RemovalTrack$NumRemovals > 1)
+
+# If cases were backwards for some reason (negative timeline), remove
+RemovalTrack <- filter(RemovalTrack, RemovalTrack$Days_before_Reentry > 0)
 
 # Write to file
 write.csv(RemovalTrack, "removal_track.csv")
