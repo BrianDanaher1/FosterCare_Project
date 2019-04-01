@@ -64,6 +64,8 @@ Reproducible design; most programs build a dataframe that is used by other progr
 --> only does up to 4 removals, (most data is NA at that point) </br>
 --> outputes WIDE file "ALL_REMS_WIDE.csv" </br>
 
+The goal currently with these new programs is to visualize what is happening when children are reunified with their parents, then pulled out from that home for the second time (their second removal). </br>
+
 
 # Placement Tracking
 How children's placements over time as they move through the foster care system effect if their case ends after a specific placement or if they continue with further placements in the system / moving to better (or worse) placements.</br>
@@ -86,7 +88,7 @@ Foster care with a relative is a clear influence on a child's retention decreasi
 ![Pie](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Pie_FINAL.PNG) </br>
 
 
-# Characteristic Analysis
+# Characteristic Analysis & Random Forest
 After building the feature engineering R program to calculate the "weight" of each case, the next step was to determine the most influential factors / characteristics of the success of child's cases in foster care system (higher success = higher likelyhood of being provided for properly and exiting system).  The success factor was used as the characteristic to be predicted, based off of various other details about the child's case, their caregivers, location, etc.  The result was discovered via a random forest model in R, and plotted in ggplot2.
 
 Influencing factors: </br>
