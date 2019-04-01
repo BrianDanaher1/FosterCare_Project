@@ -49,9 +49,13 @@ Reproducible design; most programs build a dataframe that is used by other progr
 --> creates data frame with details about why child was removed and then re-entered </br>
 --> has place, service, end reasons for removal AND RE-ENTRY TO SYSTEM information </br>
 
+15) track_removals_endreasons.R </br>
+--> builds percentages table of a child's END REASON on RE-ENTRY CASE </br>
+--> user can select what end reason of FIRST REMOVAL was (say, reunification) </br>
+
 
 # Placement Tracking
-How children's placements over time as they move through the foster care system effect if they end up exiting the system, staying in the system, or moving to better (or worse) placements.</br>
+How children's placements over time as they move through the foster care system effect if their case ends after a specific placement or if they continue with further placements in the system / moving to better (or worse) placements.</br>
 
 I built this multi-layered pie chart that includes the placement settings of the child after the three top first settings
 (from pie chart): Foster Home - Relative, Foster Home - NonRelative, and Institution.</br>
