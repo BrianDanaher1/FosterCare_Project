@@ -61,10 +61,15 @@ Reproducible design; most programs build a dataframe that is used by other progr
 --> similar to merge_FIRST_THROUGH_FIFTH.R </br>
 --> tracks REMOVALS, not placements, with placement / service / end reason for each </br>
 --> also calculates length of time between removals (in days) </br>
---> only does up to 4 removals, (most data is NA at that point) </br>
+--> only does up to 4 removals (highest # of out-of-home episode types is 4) </br>
 --> outputes WIDE file "ALL_REMS_WIDE.csv" </br>
 
-The goal currently with these new programs is to visualize what is happening when children are reunified with their parents, then pulled out from that home for the second time (their second removal). </br>
+17) removals_build_PERCENTS.R </br>
+--> builds full table of % of each Placement Setting or Service per a certain End Reason </br>
+--> these Place/Services are in the 2nd and 3rd removals </br>
+--> user can select End Reason of 1st and 2nd removals </br>
+
+The goal currently with these new programs is to visualize what is happening when children are reunified with their parents, then pulled out from that home for the second time (their second removal).  If they also have a 3rd removal, see what sorts of services / end reasons those cases have too.  </br>
 
 
 # Placement Tracking
