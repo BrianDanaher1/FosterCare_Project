@@ -125,7 +125,12 @@ Children are removed from their homes to start their path in the foster care sys
 
 ![EndReasons](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Reunified_Removed_EndReasons.PNG) </br>
 
-![Services](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Reunified_Removed_Services.PNG) </br>
+# Reunification Cases; Removal Tracking  
+Children who's first removal is marked with an end reason of "Reunification with Parents".  Which placements and services do these children move into after their 1st removal ends in reunification?  </br>
+
+![Reunified_Places](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Placements_after_Reunification.PNG) </br>
+
+![Reunified_Services](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Services_after_Reunification.PNG)  </br>
 
 # Decision Tree
 I used a number of different decision trees in an attempt to gain more insight out of the data.  However, most of the results were self-explanatory.  For example, below, we can see that a lower Rank usually results in a higher Weight.  This makes sense because Rank was based off of the success of a child's final case.  A lower Rank means a less successful case result, so the child would most likely have a higher Weight for their entire case as well. 
