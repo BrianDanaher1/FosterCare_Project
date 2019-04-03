@@ -1,5 +1,5 @@
 # FosterCare_Project
-R programs for analyzing ~250,000 records of foster care placement: preparing for machine learning, extrapolating values, deeper analysis (feature engineering: ranking & weighing different case types, etc), and combining data into single dataframes (ex. "all_numbers") in order to best suit analysis procedures. Some adapted codes for models also in this repository - remember to set proper columns / characteristics.  </br>
+R programs for analyzing 8 years of records of foster care placement: preparing for machine learning, extrapolating values, deeper analysis (feature engineering: ranking & weighing different case types, etc), and combining data into single dataframes (ex. "all_numbers") in order to best suit analysis procedures. Some adapted codes for models also in this repository - remember to set proper columns / characteristics.  </br>
 
 The purpose of this project is to use statistical analysis, machine learning, and data science tools and procedures to find insights into how child welfare servies can be improved in Northern Florida.  With the help of a local company who shared their data, I was able to build a number of different programs / data analysis schemes that aided in the understanding of the associated foster care records as a whole. These records spanned from 2010 to 2017, with approximately 40,000 total cases and 170,000 participants (including children, parents, caregivers, etc).  </br>
 
@@ -149,13 +149,14 @@ The neural network was used to assess the capability of machine learning models 
 
 ![NeuralNet](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Neural_with_Crime.PNG) </br>
 
+Once this neural network was done (error was only 4.5%), I knew that I had enough data to make accurate predictions with for the "weight" (the success factor).
+
 # Results: Random Forest on Removal Data
 Once again, incredible results with the RF model using R.  This time, different characteristics show up that were in the ML_Removals df created by the removals programs.  Lots of good insights here.  </br>
 
 ![RF_with_RemovalData](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/RF_result_RemovalData.PNG) </br>
 
-
-If I just use the newer removal data in the ML frame to make the prediction for case success:
+If I just use the newer removal data in the ML frame to make the prediction for case success to see how it ranks:
 
 ![RF_only_RemovalData](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/RF_result_RemovalDataOnly.PNG) </br>
 
