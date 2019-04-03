@@ -48,7 +48,8 @@ Reproducible design; most programs build a dataframe that is used by other progr
 --> adapted from public code, use "all_numbers" to build model </br>
 --> RF also uses GGPLOT to visualize case success influences </br>
 
-# Analysis in Progress
+# Data Manipulation: Removal Programs
+
 14) reason_for_rem.R </br>
 --> creates data frame with details about why child was removed and then re-entered </br>
 --> has place, service, end reasons for removal AND RE-ENTRY TO SYSTEM information </br>
@@ -69,7 +70,15 @@ Reproducible design; most programs build a dataframe that is used by other progr
 --> these Place/Services are in the 2nd and 3rd removals </br>
 --> user can select End Reason of 1st and 2nd removals </br>
 
+18) removals_build_ML_FRAME.R </br>
+--> takes removal data conglomerated in past few programs </br>
+--> merges into machine learning df with "all_numbers" details </br>
+--> creates "ML_removals" df in R Studio </br>
+
 The goal currently with these new programs is to visualize what is happening when children are reunified with their parents, then pulled out from that home for the second time (their second removal).  If they also have a 3rd removal, see what sorts of services / end reasons those cases have too.  </br>
+
+# Analysis in Progress
+Am currently working on putting the ML_removals df into a Random Forest model to see what factors influence number of removals the most.  Updates soon. </br>
 
 
 # Placement Tracking
