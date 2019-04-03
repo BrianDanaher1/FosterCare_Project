@@ -5,7 +5,7 @@ The purpose of this project is to use statistical analysis, machine learning, an
 
 Children's cases are often imperfect and they can "bounce" around the system in different placement settings, then leave, and come back for further cases.  One of the main goals of this project was to find any characteristics or identifiable factors that would lead to a child being removed from his or her family multiple times, and/or be re-entered into the system after being placed out of it. As discovered, the majority of the children in the given data have multiple records, different placement types, and multiple caregivers, making this initiative a multi-faceted and complex one. </br>
 
-# Data Manipulation & Feature Engineering
+# Data Manipulation & Feature Engineering Programs
 Reproducible design; most programs build a dataframe that is used by other programs for deeper insights. Feature engineering became a pivotal piece of the project before machine learning could be done, so these programs then lead into the construction of a dataframe with numerical characteristics.  This final dataframe, "all_numbers", was used for machine learning and statistical analysis.  </br>
 
  1) isolate_removals_1to5.R        
@@ -40,16 +40,16 @@ Reproducible design; most programs build a dataframe that is used by other progr
 --> final feature engineering scheme, "weights" entirety of case history, not just last place </br>
 --> "all_numbers" dataframe complete and ready for machine learning </br>
 
-# Machine Learning
+# Machine Learning Programs
 11) Neural_Network_Builder.R </br>
 12) Random_Forest_Builder.R </br>
 13) Decision_Tree_Builder.R </br>
---> 11-13 are models </br>
---> adapted from public code, use "all_numbers" to build model </br>
---> RF also uses GGPLOT to visualize case success influences </br>
+14) Random_Forest_Build_REMOVALS.R </br>
+--> 11-14 are models </br>
+--> adapted from public code, use "all_numbers" or "ML_removals" to build model </br>
+--> RF also uses ggplot2 to visualize case success influences </br>
 
-# Data Manipulation: Removal Programs
-
+# Data Manipulation: Removals Info Programs
 14) reason_for_rem.R </br>
 --> creates data frame with details about why child was removed and then re-entered </br>
 --> has place, service, end reasons for removal AND RE-ENTRY TO SYSTEM information </br>
@@ -131,6 +131,11 @@ Influencing factors: </br>
 
 This plot here also incorporates the use of the crime/financial data, which was created by another team member.  It included financial and crime statistics for about 60 of the most populated zip codes in the data set.  Turns out that this was fairly important in the first 5 influences. </br>
 
+# Statistical Analysis using Top Influences
+This is not all-inclusive yet of removals analysis, but gives good insight into what is a positive and/or negative influence on a child's case in the foster care system.  These results were found based on statistical analysis aided using the Random Forest model's results.  I took the average value and compared who was above/below that value. </br>
+
+![Results](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Results_Influences.PNG) </br>
+
 # Removal to Re-Entry Case Tracking
 Children are removed from their homes to start their path in the foster care system, but then they many times are also removed from the placements that they are put into.  It may take a number of days, weeks, months, or years for them to return.  After speaking with the company, they recommended that I track how children are reunified with their parents as an End Reason, and why they are put back into the system after this.  This would imply that they are then removed AGAIN out of the same home that they were originally taken out of.  I built more programs (#'s 14, 15, 16) to track these "re-entry" case details as children are brought back out of the same home that they first were taken out of, for a second time. </br>
 
@@ -171,5 +176,7 @@ I used a number of different decision trees in an attempt to gain more insight o
 The goal of heat mapping the data (there were ~900 unique zip codes present) was to see if any areas particularly stuck out as having a high number of cases per capita.</br>
 
 ![HeatMap](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/HeatMap_COMPARE.png) </br>
+
+
 
 
