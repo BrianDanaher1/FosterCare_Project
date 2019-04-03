@@ -1,3 +1,19 @@
+![Introduction](https://github.com/mathemacode/FosterCare_Project#fostercare_project) </br>
+![General Data Manipulation / Feature Eng. Programs](https://github.com/mathemacode/FosterCare_Project#data-manipulation--feature-engineering-programs) </br>
+![Machine Learning Programs](https://github.com/mathemacode/FosterCare_Project#machine-learning-programs) </br>
+![Removal Data Manipulation Programs](https://github.com/mathemacode/FosterCare_Project#data-manipulation-removals-info-programs) </br>
+![Analysis in Progress](https://github.com/mathemacode/FosterCare_Project#analysis-in-progress) </br>
+![Placement Tracking](https://github.com/mathemacode/FosterCare_Project#placement-tracking) </br>
+![Characteristic Analysis & Random Forest Model](https://github.com/mathemacode/FosterCare_Project#characteristic-analysis--random-forest) </br>
+![Statistical Analysis using RF Results](https://github.com/mathemacode/FosterCare_Project#statistical-analysis-using-top-influences) </br>
+![Removal to Re-Entry Case Tracking](https://github.com/mathemacode/FosterCare_Project#removal-to-re-entry-case-tracking) </br>
+![Reunification Cases Removal Tracking](https://github.com/mathemacode/FosterCare_Project#reunification-cases-removal-tracking) </br>
+![Neural Network](https://github.com/mathemacode/FosterCare_Project#neural-network) </br>
+![Random Forest Model using Removal Tracking](https://github.com/mathemacode/FosterCare_Project#results-random-forest-on-removal-data) </br>
+![Decision Tree Model](https://github.com/mathemacode/FosterCare_Project#decision-tree) </br>
+![Geographic Heat Mapping](https://github.com/mathemacode/FosterCare_Project#geographic-heat-mapping) </br>
+
+
 # FosterCare_Project
 R programs for analyzing 8 years of records of foster care placement: preparing for machine learning, extrapolating values, deeper analysis (feature engineering: ranking & weighing different case types, etc), and combining data into single dataframes (ex. "all_numbers") in order to best suit analysis procedures. Some adapted codes for models also in this repository - remember to set proper columns / characteristics.  </br>
 
