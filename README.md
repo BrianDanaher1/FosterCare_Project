@@ -78,7 +78,7 @@ Reproducible design; most programs build a dataframe that is used by other progr
 The goal currently with these new programs is to visualize what is happening when children are reunified with their parents, then pulled out from that home for the second time (their second removal).  If they also have a 3rd removal, see what sorts of services / end reasons those cases have too.  </br>
 
 # Analysis in Progress
-*** UPDATE: PLOT AT END OF PAGE, Random Forest Results w/removals information *** </br>
+*** UPDATE: PLOT BELOW ON PAGE, Random Forest Results w/removals information *** </br>
 
 Am currently working on putting the ML_removals df into a Random Forest model to see what factors influence number of removals the most.  Updates soon. </br>
 
@@ -143,25 +143,32 @@ Children who's first removal is marked with an end reason of "Reunification with
 
 ![Reunified_Services](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Services_after_Reunification.PNG)  </br>
 
-# Decision Tree
-I used a number of different decision trees in an attempt to gain more insight out of the data.  However, most of the results were self-explanatory.  For example, below, we can see that a lower Rank usually results in a higher Weight.  This makes sense because Rank was based off of the success of a child's final case.  A lower Rank means a less successful case result, so the child would most likely have a higher Weight for their entire case as well. 
-
-![DecTree](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/dectree_WEIGHT_RANK.png) </br>
 
 # Neural Network
 The neural network was used to assess the capability of machine learning models to accurately predict the "success" of a case (the "Weight" feature that we engineered earlier).  This model below also includes the crime data; it was actually created solely to test if there was enough data in our statistical analysis / machine learning dataframe "all_numbers", to determine if more data was needed to make a more accurate prediction.  To our surprise, this was extremely accurate, so I did not need to source out any additional details beyond what I had. </br>
 
 ![NeuralNet](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Neural_with_Crime.PNG) </br>
 
-# Geographic Heat Mapping
-The goal of heat mapping the data (there were ~900 unique zip codes present) was to see if any areas particularly stuck out as having a high number of cases per capita.  Many did, however, the reasons for this are still being investigated.</br>
-
-![HeatMap](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/HeatMap_COMPARE.png) </br>
-
-
 # Results: Random Forest on Removal Data
 Once again, incredible results with the RF model using R.  This time, different characteristics show up that were in the ML_Removals df created by the removals programs.  Lots of good insights here.  </br>
 
-![RF_with_RemovalData](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/RF_result_RemovalData.png)
+![RF_with_RemovalData](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/RF_result_RemovalData.PNG) </br>
+
+
+If I just use the newer removal data in the ML frame to make the prediction for case success:
+
+![RF_only_RemovalData](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/RF_result_RemovalDataOnly.PNG) </br>
+
+
+# Decision Tree
+I used a number of different decision trees in an attempt to gain more insight out of the data.  However, most of the results were self-explanatory.  For example, below, we can see that a lower Rank usually results in a higher Weight.  This makes sense because Rank was based off of the success of a child's final case.  A lower Rank means a less successful case result, so the child would most likely have a higher Weight for their entire case as well. 
+
+![DecTree](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/dectree_WEIGHT_RANK.png) </br>
+
+
+# Geographic Heat Mapping
+The goal of heat mapping the data (there were ~900 unique zip codes present) was to see if any areas particularly stuck out as having a high number of cases per capita.</br>
+
+![HeatMap](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/HeatMap_COMPARE.png) </br>
 
 
