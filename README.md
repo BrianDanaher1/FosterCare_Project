@@ -66,27 +66,27 @@ Reproducible design; most programs build a dataframe that is used by other progr
 --> RF also uses ggplot2 to visualize case success influences </br>
 
 # Data Manipulation: Removals Info Programs
-14) reason_for_rem.R </br>
+15) reason_for_rem.R </br>
 --> creates data frame with details about why child was removed and then re-entered </br>
 --> has place, service, end reasons for removal AND RE-ENTRY TO SYSTEM information </br>
 
-15) track_removals_endreasons.R </br>
+16) track_removals_endreasons.R </br>
 --> builds percentages table of a child's END REASON on RE-ENTRY CASE </br>
 --> user can select what end reason of FIRST REMOVAL was (say, reunification) </br>
 
-16) removals_build_FULL.R </br>
+17) removals_build_FULL.R </br>
 --> similar to merge_FIRST_THROUGH_FIFTH.R </br>
 --> tracks REMOVALS, not placements, with placement / service / end reason for each </br>
 --> also calculates length of time between removals (in days) </br>
 --> only does up to 4 removals (highest # of out-of-home episode types is 4) </br>
 --> outputes WIDE file "ALL_REMS_WIDE.csv" </br>
 
-17) removals_build_PERCENTS.R </br>
+18) removals_build_PERCENTS.R </br>
 --> builds full table of % of each Placement Setting or Service per a certain End Reason </br>
 --> these Place/Services are in the 2nd and 3rd removals </br>
 --> user can select End Reason of 1st and 2nd removals </br>
 
-18) removals_build_ML_FRAME.R </br>
+19) removals_build_ML_FRAME.R </br>
 --> takes removal data conglomerated in past few programs </br>
 --> merges into machine learning df with "all_numbers" details </br>
 --> creates "ML_removals" df in R Studio </br>
@@ -153,7 +153,7 @@ This is not all-inclusive yet of removals analysis, but gives good insight into 
 ![Results](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Results_Influences.PNG) </br>
 
 # Removal to Re-Entry Case Tracking
-Children are removed from their homes to start their path in the foster care system, but then they many times are also removed from the placements that they are put into.  It may take a number of days, weeks, months, or years for them to return.  After speaking with the company, they recommended that I track how children are reunified with their parents as an End Reason, and why they are put back into the system after this.  This would imply that they are then removed AGAIN out of the same home that they were originally taken out of.  I built more programs (#'s 14, 15, 16) to track these "re-entry" case details as children are brought back out of the same home that they first were taken out of, for a second time. </br>
+Children are removed from their homes to start their path in the foster care system, but then they many times are also removed from the placements that they are put into.  It may take a number of days, weeks, months, or years for them to return.  After speaking with the company, they recommended that I track how children are reunified with their parents as an End Reason, and why they are put back into the system after this.  This would imply that they are then removed AGAIN out of the same home that they were originally taken out of.  I built more programs (#'s 15, 16, 17, 18, 19) to track these "re-entry" case details as children are brought back out of the same home that they first were taken out of, for a second time. </br>
 
 ![EndReasons](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/Reunified_Removed_EndReasons.PNG) </br>
 
