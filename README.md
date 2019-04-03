@@ -78,6 +78,8 @@ Reproducible design; most programs build a dataframe that is used by other progr
 The goal currently with these new programs is to visualize what is happening when children are reunified with their parents, then pulled out from that home for the second time (their second removal).  If they also have a 3rd removal, see what sorts of services / end reasons those cases have too.  </br>
 
 # Analysis in Progress
+*** UPDATE: PLOT AT END OF PAGE, Random Forest Results w/removals information *** </br>
+
 Am currently working on putting the ML_removals df into a Random Forest model to see what factors influence number of removals the most.  Updates soon. </br>
 
 
@@ -155,5 +157,11 @@ The neural network was used to assess the capability of machine learning models 
 The goal of heat mapping the data (there were ~900 unique zip codes present) was to see if any areas particularly stuck out as having a high number of cases per capita.  Many did, however, the reasons for this are still being investigated.</br>
 
 ![HeatMap](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/HeatMap_COMPARE.png) </br>
+
+
+# Results: Random Forest on Removal Data
+Once again, incredible results with the RF model using R.  This time, different characteristics show up that were in the ML_Removals df created by the removals programs.  Lots of good insights here.  </br>
+
+![RF_with_RemovalData](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/RF_result_RemovalData.png)
 
 
