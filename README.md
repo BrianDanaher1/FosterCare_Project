@@ -94,10 +94,12 @@ Reproducible design; most programs build a dataframe that is used by other progr
 The goal currently with these new programs is to visualize what is happening when children are reunified with their parents, then pulled out from that home for the second time (their second removal).  If they also have a 3rd removal, see what sorts of services / end reasons those cases have too.  </br>
 
 # Analysis in Progress
-*** UPDATE: PLOT BELOW ON PAGE, Random Forest Results w/removals information *** </br>
+20) STAT_algorithm.R </br>
+--> custom algorithm to find the most influential characteristics </br>
+--> concept is fairly simple, see code for more details </br>
+--> uses ML_removals, and outputs "STAT_ALG" and "STAT_ALG_RESULTS.csv" </br>
 
-Am currently working on putting the ML_removals df into a Random Forest model to see what factors influence number of removals the most.  Updates soon. </br>
-
+![STAT_ALG](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/STAT_ALG_GGPLOT.png)
 
 # Placement Tracking
 How children's placements over time as they move through the foster care system effect if their case ends after a specific placement or if they continue with further placements in the system / moving to better (or worse) placements.</br>
