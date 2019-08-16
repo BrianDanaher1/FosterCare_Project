@@ -99,7 +99,7 @@ The goal currently with these new programs is to visualize what is happening whe
 --> concept is fairly simple, see code for more details </br>
 --> uses ML_removals, and outputs "STAT_ALG" and "STAT_ALG_RESULTS.csv" </br>
 
-![STAT_ALG](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/STAT_ALG_GGPLOT.png)
+![STAT_ALG](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/plots/STAT_ALG_GGPLOT.png)
 
 # Placement Tracking
 How children's placements over time as they move through the foster care system effect if their case ends after a specific placement or if they continue with further placements in the system / moving to better (or worse) placements.</br>
