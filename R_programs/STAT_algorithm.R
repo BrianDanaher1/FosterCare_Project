@@ -3,6 +3,8 @@
 # Takes each factor/characteristic of case, finds average value of that factor,
 # then compares weights for the dataset filtered for values above/below that average
 # value.  Also, can switch "mean" to "median" if need be.
+#
+# NEED TO FINISH IMPLEMENTING NORMALIZATION ON LINE 25
 
 library(dplyr)
 library(ggplot2)
@@ -18,6 +20,9 @@ STAT_ALG <- data.frame(Factor = as.character(), Wt_AboveMean = as.double(),
 # Factors / characteristics to consider (change if wanted)
 cols <- c(2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,
           21,23,24,25,26,27,28,29,30,31,32,33,34)
+
+# Normalization in progress
+# ML_removals <- normalize(ML_removals, method = "standardize)
 
 k <- 1
 
