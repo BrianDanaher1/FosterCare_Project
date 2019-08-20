@@ -22,83 +22,83 @@ The purpose of this project is to use statistical analysis, machine learning, an
 Children's cases are often imperfect and they can "bounce" around the system in different placement settings, then leave, and come back for further cases.  One of the main goals of this project was to find any characteristics or identifiable factors that would lead to a child being removed from his or her family multiple times, and/or be re-entered into the system after being placed out of it. As discovered, the majority of the children in the given data have multiple records, different placement types, and multiple caregivers, making this initiative a multi-faceted and complex one. </br>
 
 # Data Manipulation & Feature Engineering Programs
-Reproducible design; most programs build a dataframe that is used by other programs for deeper insights. Feature engineering became a pivotal piece of the project before machine learning could be done, so these programs then lead into the construction of a dataframe with numerical characteristics.  This final dataframe, "all_numbers", was used for machine learning and statistical analysis.  </br>
+Reproducible design; most programs build a dataframe that is used by other programs for deeper insights. Feature engineering became a pivotal piece of the project before machine learning could be done, so these programs then lead into the construction of a dataframe with numerical characteristics.  This final dataframe, `all_numbers`, was used for machine learning and statistical analysis.  </br>
 
- 1) isolate_removals_1to5.R        
- --> outputs each number case as dataframe (ex. "second_removals")
+ 1. isolate_removals_1to5.R        
+    - outputs each number case as dataframe (ex. `second_removals`)
  
- 2) Sets.R                         
- --> creates percentages for movements within removal dataframes ^^ </br>
- --> these percentages do not consider the case BEFORE the current one
+ 2. Sets.R                         
+    - creates percentages for movements within removal dataframes ^^ </br>
+    - these percentages do not consider the case BEFORE the current one
  
- 3) merge_FIRST_THROUGH_FIFTH.R    
- --> outputs wide file "paths" with 1-5 placements
+ 3. merge_FIRST_THROUGH_FIFTH.R    
+    - outputs wide file `paths` with 1-5 placements
  
- 4) match_flow.R                   
- --> uses "paths" to track specific placement type through case history </br>
- --> outputs "child_flow_custom"
+ 4. match_flow.R                   
+    - uses `paths` to track specific placement type through case history </br>
+    - outputs `child_flow_custom`
  
- 5) find_percent_OF_FIRST_CASES.R  
- 6) find_percent_SECOND_outcome.R
- 7) find_percent_THIRD_outcome.R </br>
- --> 5-7 use child_flow_custom to calculate % of A to B movements (user chooses A & B)  </br>
- --> these percentages WILL consider the case BEFORE the current one (as specified by user)
+ 5. find_percent_OF_FIRST_CASES.R  
+ 6. find_percent_SECOND_outcome.R
+ 7. find_percent_THIRD_outcome.R </br>
+    - 5-7 use child_flow_custom to calculate % of A to B movements (user chooses A & B)  </br>
+    - these percentages WILL consider the case BEFORE the current one (as specified by user)
  
- 8) build_rank_system.R  </br>
- --> isolates last case of each child and pulls information </br>
- --> feature engineering, builds ranking system using last placement in case
+ 8. build_rank_system.R  </br>
+    - isolates last case of each child and pulls information </br>
+    - feature engineering, builds ranking system using last placement in case
  
- 9) all_numbers_merge_data.R       
- --> feature engineering, extrapolates & calculates columns of features for machine learning </br>
- --> examples: case duration (in days), number of participants, average caregiver age, pop density
+ 9. all_numbers_merge_data.R       
+    - feature engineering, extrapolates & calculates columns of features for machine learning </br>
+    - examples: case duration (in days), number of participants, average caregiver age, pop density
  
-10) WEIGHT_MOVEMENTS.R             
---> final feature engineering scheme, "weights" entirety of case history, not just last place </br>
---> "all_numbers" dataframe complete and ready for machine learning </br>
+10. WEIGHT_MOVEMENTS.R             
+    - final feature engineering scheme, "weights" entirety of case history, not just last place </br>
+    - `all_numbers` dataframe complete and ready for machine learning </br>
 
 # Machine Learning Programs
-11) Neural_Network_Builder.R </br>
-12) Random_Forest_Builder.R </br>
-13) Decision_Tree_Builder.R </br>
-14) Random_Forest_Build_REMOVALS.R </br>
---> 11-14 are models </br>
---> adapted from public code, use "all_numbers" or "ML_removals" to build model </br>
---> RF also uses ggplot2 to visualize case success influences </br>
+11. Neural_Network_Builder.R </br>
+12. Random_Forest_Builder.R </br>
+13. Decision_Tree_Builder.R </br>
+14. Random_Forest_Build_REMOVALS.R </br>
+    - 11-14 are models </br>
+    - adapted from public code, use `all_numbers` or `ML_removals` to build model </br>
+    - RF also uses ggplot2 to visualize case success influences </br>
 
 # Data Manipulation: Removals Info Programs
-15) reason_for_rem.R </br>
---> creates data frame with details about why child was removed and then re-entered </br>
---> has place, service, end reasons for removal AND RE-ENTRY TO SYSTEM information </br>
+15. reason_for_rem.R </br>
+    - creates data frame with details about why child was removed and then re-entered </br>
+    - has place, service, end reasons for removal AND RE-ENTRY TO SYSTEM information </br>
 
-16) track_removals_endreasons.R </br>
---> builds percentages table of a child's END REASON on RE-ENTRY CASE </br>
---> user can select what end reason of FIRST REMOVAL was (say, reunification) </br>
+16. track_removals_endreasons.R </br>
+    - builds percentages table of a child's END REASON on RE-ENTRY CASE </br>
+    - user can select what end reason of FIRST REMOVAL was (say, reunification) </br>
 
-17) removals_build_FULL.R </br>
---> similar to merge_FIRST_THROUGH_FIFTH.R </br>
---> tracks REMOVALS, not placements, with placement / service / end reason for each </br>
---> also calculates length of time between removals (in days) </br>
---> only does up to 4 removals (highest # of out-of-home episode types is 4) </br>
---> outputes WIDE file "ALL_REMS_WIDE.csv" </br>
+17. removals_build_FULL.R </br>
+    - similar to `merge_FIRST_THROUGH_FIFTH.R` </br>
+    - tracks REMOVALS, not placements, with placement / service / end reason for each </br>
+    - also calculates length of time between removals (in days) </br>
+    - only does up to 4 removals (highest # of out-of-home episode types is 4) </br>
+    - outputes WIDE file "ALL_REMS_WIDE.csv" </br>
 
-18) removals_build_PERCENTS.R </br>
---> builds full table of % of each Placement Setting or Service per a certain End Reason </br>
---> these Place/Services are in the 2nd and 3rd removals </br>
---> user can select End Reason of 1st and 2nd removals </br>
+18. removals_build_PERCENTS.R </br>
+    - builds full table of % of each `Placement Setting` or `Service` per a certain `End Reason` </br>
+    - these Place/Services are in the 2nd and 3rd removals </br>
+    - user can select `End Reason` of 1st and 2nd removals </br>
 
-19) removals_build_ML_FRAME.R </br>
---> takes removal data conglomerated in past few programs </br>
---> merges into machine learning df with "all_numbers" details </br>
---> creates "ML_removals" df in R Studio </br>
+19. removals_build_ML_FRAME.R </br>
+    - takes removal data conglomerated in past few programs </br>
+    - merges into machine learning df with "all_numbers" details </br>
+    - creates `ML_removals` df in R Studio </br>
 
 The goal currently with these new programs is to visualize what is happening when children are reunified with their parents, then pulled out from that home for the second time (their second removal).  If they also have a 3rd removal, see what sorts of services / end reasons those cases have too.  </br>
 
 # Analysis in Progress
-20) STAT_algorithm.R </br>
---> custom algorithm to find the most influential characteristics </br>
---> concept is fairly simple, see code for more details </br>
---> uses ML_removals, and outputs "STAT_ALG" and "STAT_ALG_RESULTS.csv" </br>
---> current work: need to normalize data in algorithm to make this more statistically robust
+20. STAT_algorithm.R </br>
+    - custom algorithm to find the most influential characteristics </br>
+    - concept is fairly simple, see code for more details </br>
+    - uses ML_removals, and outputs `STAT_ALG` and `STAT_ALG_RESULTS.csv` </br>
+    - current work: need to normalize data in algorithm to make this more statistically robust
 
 ![STAT_ALG](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/plots/STAT_ALG_GGPLOT.png)
 
