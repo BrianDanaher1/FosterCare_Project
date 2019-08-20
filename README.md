@@ -5,7 +5,7 @@
 ![Analysis in Progress](https://github.com/mathemacode/FosterCare_Project#analysis-in-progress) </br>
 ![Placement Tracking](https://github.com/mathemacode/FosterCare_Project#placement-tracking) </br>
 ![Characteristic Analysis & Random Forest Model](https://github.com/mathemacode/FosterCare_Project#characteristic-analysis--random-forest) </br>
-![Statistical Analysis using RF Results](https://github.com/mathemacode/FosterCare_Project#statistical-analysis-using-top-influences) </br>
+![Statistical Analysis using Top Influences](https://github.com/mathemacode/FosterCare_Project#statistical-analysis-using-top-influences) </br>
 ![Removal to Re-Entry Case Tracking](https://github.com/mathemacode/FosterCare_Project#removal-to-re-entry-case-tracking) </br>
 ![Reunification Cases Removal Tracking](https://github.com/mathemacode/FosterCare_Project#reunification-cases-removal-tracking) </br>
 ![Neural Network](https://github.com/mathemacode/FosterCare_Project#neural-network) </br>
@@ -15,7 +15,7 @@
 
 
 # FosterCare_Project
-R programs for analyzing 8 years of records of foster care placement: preparing for machine learning, extrapolating values, deeper analysis (feature engineering: ranking & weighing different case types, etc), and combining data into single dataframes (ex. "all_numbers") in order to best suit analysis procedures. Some adapted codes for models also in this repository - remember to set proper columns / characteristics.  </br>
+R programs for analyzing 8 years of records of foster care placement: preparing for machine learning, extrapolating values, deeper analysis (feature engineering: ranking & weighing different case types, etc), and combining data into single dataframes (ex. `all_numbers`) in order to best suit analysis procedures. Some adapted codes for models also in this repository - remember to set proper columns / characteristics.  </br>
 
 The purpose of this project is to use statistical analysis, machine learning, and data science tools and procedures to find insights into how child welfare servies can be improved in Northern Florida.  With the help of a local company who shared their data, I was able to build a number of different programs / data analysis schemes that aided in the understanding of the associated foster care records as a whole. These records spanned from 2010 to 2017, with approximately 40,000 total cases and 170,000 participants (including children, parents, caregivers, etc).  </br>
 
@@ -79,7 +79,7 @@ Reproducible design; most programs build a dataframe that is used by other progr
     - tracks REMOVALS, not placements, with placement / service / end reason for each </br>
     - also calculates length of time between removals (in days) </br>
     - only does up to 4 removals (highest # of out-of-home episode types is 4) </br>
-    - outputes WIDE file "ALL_REMS_WIDE.csv" </br>
+    - outputes WIDE file `ALL_REMS_WIDE.csv` </br>
 
 18. removals_build_PERCENTS.R </br>
     - builds full table of % of each `Placement Setting` or `Service` per a certain `End Reason` </br>
@@ -88,7 +88,7 @@ Reproducible design; most programs build a dataframe that is used by other progr
 
 19. removals_build_ML_FRAME.R </br>
     - takes removal data conglomerated in past few programs </br>
-    - merges into machine learning df with "all_numbers" details </br>
+    - merges into machine learning df with `all_numbers` details </br>
     - creates `ML_removals` df in R Studio </br>
 
 The goal currently with these new programs is to visualize what is happening when children are reunified with their parents, then pulled out from that home for the second time (their second removal).  If they also have a 3rd removal, see what sorts of services / end reasons those cases have too.  </br>
@@ -127,24 +127,24 @@ Foster care with a relative is a clear influence on a child's retention decreasi
 After building the feature engineering R program to calculate the "weight" of each case, the next step was to determine the most influential factors / characteristics of the success of child's cases in foster care system (higher success = higher likelyhood of being provided for properly and exiting system).  The success factor was used as the characteristic to be predicted, based off of various other details about the child's case, their caregivers, location, etc.  The result was discovered via a random forest model in R, and plotted in ggplot2.
 
 Influencing factors: </br>
-1) Case Duration: actual duration of case, in days, from case begin date to case end date </br>
-2) Age: age of child during associated case (estimated with MM/YYYY) </br>
-3) CareAge: age of caregiver (estimated with MM/YYYY) </br>
-4) NumParticipants: number of people involved in case (parents, caregivers, other children, relatives, etc) </br>
-5) PerCapIncome: income per capita of associated case zip code </br>
-6) MedHousIncome: median household income
-7) NumCaregivers: number of caregivers in case
-8) VC: violent crime rate
-9) ZipDens: density of zip code per square mile
-10) ZipCount: number of other cases in same zip code as case
-11) AvgHome: average cost of a house in area
-12) PC: property crime rate
-13) Zip: zip code where case took place
-14) PercUnder18: percent of population in zip under 18
-15) LowBirthWeight: rate of low birth weights in zip
-16) InfantMortRate: rate of infant mortality in zip
-17) JuvDelinquency: rate of junvinile delinquency in zip
-18) ProbZip: a factor created to track the most densely packed zip codes in terms of cases </br>
+1) `Case Duration`: actual duration of case, in days, from case begin date to case end date </br>
+2) `Age`: age of child during associated case (estimated with MM/YYYY) </br>
+3) `CareAge`: age of caregiver (estimated with MM/YYYY) </br>
+4) `NumParticipants`: number of people involved in case (parents, caregivers, other children, relatives, etc) </br>
+5) `PerCapIncome`: income per capita of associated case zip code </br>
+6) `MedHousIncome`: median household income
+7) `NumCaregivers`: number of caregivers in case
+8) `VC`: violent crime rate
+9) `ZipDens`: density of zip code per square mile
+10) `ZipCount`: number of other cases in same zip code as case
+11) `AvgHome`: average cost of a house in area
+12) `PC`: property crime rate
+13) `Zip`: zip code where case took place
+14) `PercUnder18`: percent of population in zip under 18
+15) `LowBirthWeight`: rate of low birth weights in zip
+16) `InfantMortRate`: rate of infant mortality in zip
+17) `JuvDelinquency`: rate of junvinile delinquency in zip
+18) `ProbZip`: a factor created to track the most densely packed zip codes in terms of cases </br>
 
 ![Influences](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/plots/Influences_Inc_CrimeData.png) </br>
 
