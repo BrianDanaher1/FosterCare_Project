@@ -101,7 +101,9 @@ The goal currently with these new programs is to visualize what is happening whe
     - this algorithm has been worked on in another repo called [HAMR](https://github.com/mathemacode/HAMR); it is still
     under verification & validation.  Main results for this project are still from the random forest model.
 
-![STAT_ALG](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/plots/STAT_ALG_GGPLOT.png)
+The current results of this algorithm are as follows - which are notably different than the result of the models:
+
+![STAT_ALG](https://raw.githubusercontent.com/mathemacode/HAMR/master/plots/STAT_ALG_SampleResult2.png)
 
 # Placement Tracking
 How children's placements over time as they move through the foster care system effect if their case ends after a specific placement or if they continue with further placements in the system / moving to better (or worse) placements.</br>
