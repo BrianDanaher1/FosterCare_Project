@@ -110,7 +110,7 @@ The current results of this algorithm are as follows - which are notably differe
 SPSS factor analysis results so far are showing very weak correlations in the data, seemingly due to missing data.  I 
 have recently added a SPSS folder to track some of the findings with this tool.
 
-![SPSS_Results](https://raw.githubusercontent.com/mathemacode/HAMR/master/SPSS/weight_corr_results.png)
+![SPSS_Results](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/SPSS/weight_corr_results.png)
 
 # Placement Tracking
 How children's placements over time as they move through the foster care system effect if their case ends after a specific placement or if they continue with further placements in the system / moving to better (or worse) placements.</br>
