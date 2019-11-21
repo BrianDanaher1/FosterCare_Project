@@ -1,3 +1,10 @@
+# FosterCare_Project
+R programs for analyzing 8 years of records of foster care placement: preparing for machine learning, extrapolating values, deeper analysis (feature engineering: ranking & weighing different case types, etc), and combining data into single dataframes (ex. `all_numbers`) in order to best suit analysis procedures. Some adapted codes for models also in this repository - remember to set proper columns / characteristics.  </br>
+
+The purpose of this project is to use statistical analysis, machine learning, and data science tools and procedures to find insights into how child welfare servies can be improved in Northern Florida.  With the help of a local company who shared their data, I was able to build a number of different programs / data analysis schemes that aided in the understanding of the associated foster care records as a whole. These records spanned from 2010 to 2017, with approximately 40,000 total cases and 170,000 participants (including children, parents, caregivers, etc).  </br>
+
+Children's cases are often imperfect and they can "bounce" around the system in different placement settings, then leave, and come back for further cases.  One of the main goals of this project was to find any characteristics or identifiable factors that would lead to a child being removed from his or her family multiple times, and/or be re-entered into the system after being placed out of it. As discovered, the majority of the children in the given data have multiple records, different placement types, and multiple caregivers, making this initiative a multi-faceted and complex one. </br>
+
 ![Introduction](https://github.com/mathemacode/FosterCare_Project#fostercare_project) </br>
 ![General Data Manipulation / Feature Eng. Programs](https://github.com/mathemacode/FosterCare_Project#data-manipulation--feature-engineering-programs) </br>
 ![Machine Learning Programs](https://github.com/mathemacode/FosterCare_Project#machine-learning-programs) </br>
@@ -12,14 +19,6 @@
 ![Random Forest Model using Removal Tracking](https://github.com/mathemacode/FosterCare_Project#results-random-forest-on-removal-data) </br>
 ![Decision Tree Model](https://github.com/mathemacode/FosterCare_Project#decision-tree) </br>
 ![Geographic Heat Mapping](https://github.com/mathemacode/FosterCare_Project#geographic-heat-mapping) </br>
-
-
-# FosterCare_Project
-R programs for analyzing 8 years of records of foster care placement: preparing for machine learning, extrapolating values, deeper analysis (feature engineering: ranking & weighing different case types, etc), and combining data into single dataframes (ex. `all_numbers`) in order to best suit analysis procedures. Some adapted codes for models also in this repository - remember to set proper columns / characteristics.  </br>
-
-The purpose of this project is to use statistical analysis, machine learning, and data science tools and procedures to find insights into how child welfare servies can be improved in Northern Florida.  With the help of a local company who shared their data, I was able to build a number of different programs / data analysis schemes that aided in the understanding of the associated foster care records as a whole. These records spanned from 2010 to 2017, with approximately 40,000 total cases and 170,000 participants (including children, parents, caregivers, etc).  </br>
-
-Children's cases are often imperfect and they can "bounce" around the system in different placement settings, then leave, and come back for further cases.  One of the main goals of this project was to find any characteristics or identifiable factors that would lead to a child being removed from his or her family multiple times, and/or be re-entered into the system after being placed out of it. As discovered, the majority of the children in the given data have multiple records, different placement types, and multiple caregivers, making this initiative a multi-faceted and complex one. </br>
 
 # Data Manipulation & Feature Engineering Programs
 Reproducible design; most programs build a dataframe that is used by other programs for deeper insights. Feature engineering became a pivotal piece of the project before machine learning could be done, so these programs then lead into the construction of a dataframe with numerical characteristics.  This final dataframe, `all_numbers`, was used for machine learning and statistical analysis.  </br>
@@ -99,6 +98,8 @@ The goal currently with these new programs is to visualize what is happening whe
     - concept is fairly simple, see code for more details </br>
     - uses ML_removals, and outputs `STAT_ALG` and `STAT_ALG_RESULTS.csv` </br>
     - current work: need to normalize data in algorithm to make this more statistically robust
+    - this algorithm has been worked on in another repo called [HAMR](https://github.com/mathemacode/HAMR); it is still
+    under verification & validation.  Main results for this project are still from the random forest model.
 
 ![STAT_ALG](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/plots/STAT_ALG_GGPLOT.png)
 
