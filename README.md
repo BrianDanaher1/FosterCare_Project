@@ -93,6 +93,7 @@ Reproducible design; most programs build a dataframe that is used by other progr
 The goal currently with these new programs is to visualize what is happening when children are reunified with their parents, then pulled out from that home for the second time (their second removal).  If they also have a 3rd removal, see what sorts of services / end reasons those cases have too.  </br>
 
 # Analysis in Progress
+### Custom statistical algorithm
 20. STAT_algorithm.R </br>
     - custom algorithm to find the most influential characteristics </br>
     - concept is fairly simple, see code for more details </br>
@@ -104,6 +105,12 @@ The goal currently with these new programs is to visualize what is happening whe
 The current results of this algorithm are as follows - which are notably different than the result of the models:
 
 ![STAT_ALG](https://raw.githubusercontent.com/mathemacode/HAMR/master/plots/STAT_ALG_SampleResult2.png)
+
+### SPSS Analysis
+SPSS factor analysis results so far are showing very weak correlations in the data, seemingly due to missing data.  I 
+have recently added a SPSS folder to track some of the findings with this tool.
+
+![SPSS_Results](https://raw.githubusercontent.com/mathemacode/HAMR/master/SPSS/weight_corr_results.png)
 
 # Placement Tracking
 How children's placements over time as they move through the foster care system effect if their case ends after a specific placement or if they continue with further placements in the system / moving to better (or worse) placements.</br>
