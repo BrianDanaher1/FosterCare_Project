@@ -11,6 +11,8 @@ My published research article [can be found directly here (for free!)](https://c
 
 Spring 2019 results poster ([availabe in higher resolution](https://docdro.id/2SOtXoP))
 
+News article about this project [can be read here](https://news.erau.edu/headlines/data-science-offers-new-tools-for-understanding-foster-care-outcomes).
+
 ![poster2019](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/posters/poster-spring-19.png)
 
 ## Table of Contents
