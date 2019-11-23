@@ -121,6 +121,13 @@ analysis was done with roughly 1,600 records).  I have recently added a SPSS fol
 
 ![SPSS_Results](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/SPSS/weight_corr_results.png)
 
+I feared that going back and doing more statistical analysis on the raw data (with some derived attributes here) would
+result the same way that the initial analysis of the data did back in 2018.  Without considering movement / placement
+tracking, there are no deep enough characteristics that stick out as predictors of the "Weight".  This was the main
+reason why I worked in R instead of something like SPSS, because what's really needed are *algorithms*, not statistical
+analysis.  Nonetheless, I'm working on learning SPSS and will see what I can come up with.  I suppose even clustering
+by number of removals, or weights, may highlight something I have not yet seen.
+
 # Placement Tracking
 How children's placements over time as they move through the foster care system effect if their case ends after a specific placement or if they continue with further placements in the system / moving to better (or worse) placements.</br>
 
