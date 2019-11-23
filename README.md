@@ -5,8 +5,16 @@ The purpose of this project is to use statistical analysis, machine learning, an
 
 Children's cases are often imperfect and they can "bounce" around the system in different placement settings, then leave, and come back for further cases.  One of the main goals of this project was to find any characteristics or identifiable factors that would lead to a child being removed from his or her family multiple times, and/or be re-entered into the system after being placed out of it. As discovered, the majority of the children in the given data have multiple records, different placement types, and multiple caregivers, making this initiative a multi-faceted and complex one. </br>
 
-![Introduction](https://github.com/mathemacode/FosterCare_Project#fostercare_project) </br>
-![General Data Manipulation / Feature Eng. Programs](https://github.com/mathemacode/FosterCare_Project#data-manipulation--feature-engineering-programs) </br>
+## Published Research
+
+My published research article [can be found directly here (for free!)](https://commons.erau.edu/beyond/vol3/iss1/3/).
+
+Spring 2019 results poster ([availabe in higher resolution](https://docdro.id/2SOtXoP))
+
+![poster2019](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/posters/poster-spring-19.png)
+
+## Table of Contents
+![Data Manipulation / Feature Eng. Programs](https://github.com/mathemacode/FosterCare_Project#data-manipulation--feature-engineering-programs) </br>
 ![Machine Learning Programs](https://github.com/mathemacode/FosterCare_Project#machine-learning-programs) </br>
 ![Removal Data Manipulation Programs](https://github.com/mathemacode/FosterCare_Project#data-manipulation-removals-info-programs) </br>
 ![Analysis in Progress](https://github.com/mathemacode/FosterCare_Project#analysis-in-progress) </br>
@@ -19,6 +27,7 @@ Children's cases are often imperfect and they can "bounce" around the system in 
 ![Random Forest Model using Removal Tracking](https://github.com/mathemacode/FosterCare_Project#results-random-forest-on-removal-data) </br>
 ![Decision Tree Model](https://github.com/mathemacode/FosterCare_Project#decision-tree) </br>
 ![Geographic Heat Mapping](https://github.com/mathemacode/FosterCare_Project#geographic-heat-mapping) </br>
+
 
 # Data Manipulation & Feature Engineering Programs
 Reproducible design; most programs build a dataframe that is used by other programs for deeper insights. Feature engineering became a pivotal piece of the project before machine learning could be done, so these programs then lead into the construction of a dataframe with numerical characteristics.  This final dataframe, `all_numbers`, was used for machine learning and statistical analysis.  </br>
@@ -107,8 +116,8 @@ The current results of this algorithm are as follows - which are notably differe
 ![STAT_ALG](https://raw.githubusercontent.com/mathemacode/HAMR/master/plots/STAT_ALG_SampleResult2.png)
 
 ### SPSS Analysis
-SPSS factor analysis results so far are showing very weak correlations in the data, seemingly due to missing data.  I 
-have recently added a SPSS folder to track some of the findings with this tool.
+SPSS factor analysis results so far are showing very weak correlations in the data, seemingly due to missing data (this
+analysis was done with roughly 1,600 records).  I have recently added a SPSS folder to track some of the findings with this tool.
 
 ![SPSS_Results](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/SPSS/weight_corr_results.png)
 
