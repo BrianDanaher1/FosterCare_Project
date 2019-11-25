@@ -13,10 +13,10 @@ Spring 2019 results poster ([availabe in higher resolution](https://docdro.id/2S
 
 News article about this project [can be read here](https://news.erau.edu/headlines/data-science-offers-new-tools-for-understanding-foster-care-outcomes).
 
-![poster2019](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/posters/poster-spring-19.png)
+![poster2019](posters/poster-spring-19.png)
 
 ## Table of Contents
-![Data Manipulation / Feature Eng. Programs](FosterCare_Project#data-manipulation--feature-engineering-programs) </br>
+![Data Manipulation / Feature Eng. Programs](https://github.com/mathemacode/FosterCare_Project#data-manipulation--feature-engineering-programs) </br>
 ![Machine Learning Programs](https://github.com/mathemacode/FosterCare_Project#machine-learning-programs) </br>
 ![Removal Data Manipulation Programs](https://github.com/mathemacode/FosterCare_Project#data-manipulation-removals-info-programs) </br>
 ![Analysis in Progress](https://github.com/mathemacode/FosterCare_Project#analysis-in-progress) </br>
@@ -117,11 +117,13 @@ The current results of this algorithm are as follows - which are notably differe
 
 ![STAT_ALG](https://raw.githubusercontent.com/mathemacode/HAMR/master/plots/STAT_ALG_SampleResult2.png)
 
+This algorithm still needs more work to be done in terms of verifying the logic and theory behind it.
+
 ### SPSS Analysis
 SPSS factor analysis results so far are showing very weak correlations in the data, seemingly due to missing data (this
 analysis was done with roughly 1,600 records).  I have recently added a SPSS folder to track some of the findings with this tool.
 
-![SPSS_Results](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/SPSS/weight_corr_results.png)
+![SPSS_Results](SPSS/weight_corr_results.png)
 
 I feared that going back and doing more statistical analysis on the raw data (with some derived attributes here) would
 result the same way that the initial analysis of the data did back in 2018.  Without considering movement / placement
@@ -140,15 +142,15 @@ The outer rings of the pie show the percentage of children that went to the indi
 
 Having “No Case” is a significant insight because it means that when the program was run, there was an “NA” in the data for the next case. This means that there is no additional record for this child after moving out of a placement setting. This is good because I can assume that the child does not have a need to be re-entered into the system and was provided for properly by the system. One of the original goals of this research was to find factors that influenced this sort of behavior, so, from this visualization, I can conclude the following:</br></br>
 
-● After Foster Relative - highest chance (55%) of leaving system</br>
+● After Foster Relative - **highest chance** (55%) of leaving system</br>
 ● After Foster-Not Relative - high chance (75%) of staying in system</br>
-● After Institution - lowest chance (9%) of leaving system</br>
+● After Institution - **lowest chance** (9%) of leaving system</br>
 ● Highest chance of going to Pre-Adoptive Home after Foster-Relative (12%)</br>
 </br>
 
 Foster care with a relative is a clear influence on a child's retention decreasing.  In addition to the insights that can be extrapolated from this visualization, I also discovered that 98% of the children who move into the Pre-Adoption placement setting (which is ONLY a significant movement after foster with a relative), do not return for any further cases.  This is more proof that foster care with a relative is superior than with a non-relative. </br>
 
-![Pie](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/plots/Pie_FINAL.PNG) </br>
+![Pie](plots/Pie_FINAL.PNG) </br>
 
 
 # Characteristic Analysis & Random Forest
@@ -174,52 +176,52 @@ Influencing factors: </br>
 17) `JuvDelinquency`: rate of junvinile delinquency in zip
 18) `ProbZip`: a factor created to track the most densely packed zip codes in terms of cases </br>
 
-![Influences](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/plots/Influences_Inc_CrimeData.png) </br>
+![Influences](plots/Influences_Inc_CrimeData.png) </br>
 
 This plot here also incorporates the use of the crime/financial data, which was created by another team member.  It included financial and crime statistics for about 60 of the most populated zip codes in the data set.  Turns out that this was fairly important in the first 5 influences. </br>
 
 # Statistical Analysis using Top Influences
 This is not all-inclusive yet of removals analysis, but gives good insight into what is a positive and/or negative influence on a child's case in the foster care system.  These results were found based on statistical analysis aided using the Random Forest model's results.  I took the average value and compared who was above/below that value. </br>
 
-![Results](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/plots/Results_Influences.PNG) </br>
+![Results](plots/Results_Influences.PNG) </br>
 
 # Removal to Re-Entry Case Tracking
 Children are removed from their homes to start their path in the foster care system, but then they many times are also removed from the placements that they are put into.  It may take a number of days, weeks, months, or years for them to return.  After speaking with the company, they recommended that I track how children are reunified with their parents as an End Reason, and why they are put back into the system after this.  This would imply that they are then removed AGAIN out of the same home that they were originally taken out of.  I built more programs (#'s 15, 16, 17, 18, 19) to track these "re-entry" case details as children are brought back out of the same home that they first were taken out of, for a second time. </br>
 
-![EndReasons](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/plots/Reunified_Removed_EndReasons.PNG) </br>
+![EndReasons](plots/Reunified_Removed_EndReasons.PNG) </br>
 
 # Reunification Cases; Removal Tracking  
 Children who's first removal is marked with an end reason of "Reunification with Parents".  Which placements and services do these children move into after their 1st removal ends in reunification?  </br>
 
-![Reunified_Places](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/plots/Placements_after_Reunification.PNG) </br>
+![Reunified_Places](plots/Placements_after_Reunification.PNG) </br>
 
-![Reunified_Services](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/plots/Services_after_Reunification.PNG)  </br>
+![Reunified_Services](plots/Services_after_Reunification.PNG)  </br>
 
 
 # Neural Network
 The neural network was used to assess the capability of machine learning models to accurately predict the "success" of a case (the "Weight" feature that we engineered earlier).  This model below also includes the crime data; it was actually created solely to test if there was enough data in our statistical analysis / machine learning dataframe "all_numbers", to determine if more data was needed to make a more accurate prediction.  To our surprise, this was extremely accurate, so I did not need to source out any additional details beyond what I had. </br>
 
-![NeuralNet](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/plots/Neural_with_Crime.PNG) </br>
+![NeuralNet](plots/Neural_with_Crime.PNG) </br>
 
 Once this neural network was done (error was only 4.5%), I knew that I had enough data to make accurate predictions with for the "weight" (the success factor).
 
 # Results: Random Forest on Removal Data
 Once again, incredible results with the RF model using R.  This time, different characteristics show up that were in the ML_Removals df created by the removals programs.  Lots of good insights here.  </br>
 
-![RF_with_RemovalData](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/plots/RF_result_RemovalData.PNG) </br>
+![RF_with_RemovalData](plots/RF_result_RemovalData.PNG) </br>
 
 If I just use the newer removal data in the ML frame to make the prediction for case success to see how it ranks:
 
-![RF_only_RemovalData](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/plots/RF_result_RemovalDataOnly.PNG) </br>
+![RF_only_RemovalData](plots/RF_result_RemovalDataOnly.PNG) </br>
 
 
 # Decision Tree
 I used a number of different decision trees in an attempt to gain more insight out of the data.  However, most of the results were self-explanatory.  For example, below, we can see that a lower Rank usually results in a higher Weight.  This makes sense because Rank was based off of the success of a child's final case.  A lower Rank means a less successful case result, so the child would most likely have a higher Weight for their entire case as well. 
 
-![DecTree](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/plots/dectree_WEIGHT_RANK.png) </br>
+![DecTree](plots/dectree_WEIGHT_RANK.png) </br>
 
 
 # Geographic Heat Mapping
 The goal of heat mapping the data (there were ~900 unique zip codes present) was to see if any areas particularly stuck out as having a high number of cases per capita.</br>
 
-![HeatMap](https://raw.githubusercontent.com/mathemacode/FosterCare_Project/master/plots/HeatMap_COMPARE.png) </br>
+![HeatMap](plots/HeatMap_COMPARE.png) </br>
