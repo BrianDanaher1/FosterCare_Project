@@ -7,13 +7,13 @@ Children's cases are often imperfect and they can "bounce" around the system in 
 
 ## Published Research
 
-My published research article [can be found directly here (for free!)](https://commons.erau.edu/beyond/vol3/iss1/3/).
+#### Published research article [can be found directly here (for free!)](https://commons.erau.edu/beyond/vol3/iss1/3/).
 
-Spring 2019 results poster ([availabe in higher resolution](https://docdro.id/2SOtXoP))
+#### News article about this project [can be read here](https://news.erau.edu/headlines/data-science-offers-new-tools-for-understanding-foster-care-outcomes).
 
-News article about this project [can be read here](https://news.erau.edu/headlines/data-science-offers-new-tools-for-understanding-foster-care-outcomes).
-
+Poster is [available in higher resolution](https://docdro.id/2SOtXoP)
 ![poster2019](posters/poster-spring-19.png)
+
 
 ## Table of Contents
 ![Data Manipulation / Feature Eng. Programs](https://github.com/mathemacode/FosterCare_Project#data-manipulation--feature-engineering-programs) </br>
