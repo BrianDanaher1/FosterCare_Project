@@ -11,8 +11,8 @@ Children's cases are often imperfect and they can "bounce" around the system in 
 
 #### News article about this project [can be read here](https://news.erau.edu/headlines/data-science-offers-new-tools-for-understanding-foster-care-outcomes).
 
-Poster is [available in higher resolution](https://docdro.id/2SOtXoP)
 ![poster2019](posters/poster-spring-19.png)
+Poster is [available in higher resolution](https://docdro.id/2SOtXoP)
 
 
 ## Table of Contents
