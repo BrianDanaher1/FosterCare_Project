@@ -1,4 +1,7 @@
 # FosterCare_Project
+
+### Update 2020: Project is continuing, [click here](https://github.com/mathemacode/PSF_ERAU)
+
 R programs for analyzing 8 years of records of foster care placement: preparing for machine learning, extrapolating values, deeper analysis (feature engineering: ranking & weighing different case types, etc), and combining data into single dataframes (ex. `all_numbers`) in order to best suit analysis procedures. Some adapted codes for models also in this repository - remember to set proper columns / characteristics.  </br>
 
 The purpose of this project is to use statistical analysis, machine learning, and data science tools and procedures to find insights into how child welfare servies can be improved in Northern Florida.  With the help of a local company who shared their data, I was able to build a number of different programs / data analysis schemes that aided in the understanding of the associated foster care records as a whole. These records spanned from 2010 to 2017, with approximately 40,000 total cases and 170,000 participants (including children, parents, caregivers, etc).  </br>
